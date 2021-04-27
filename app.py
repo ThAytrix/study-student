@@ -7,7 +7,8 @@ import math
 
 app = Flask(__name__)
 
-df = pd.read_csv("student.csv")
+# df = pd.read_csv("student.csv")
+df = pd.read_json("student.json")
 df_dum = pd.get_dummies(df)
 df['note_moyenne'] = ((df['G1'] + df['G2'] + df['G3'])/3).round(2)
 df['consommation'] = ((df['Dalc'] + df['Walc'])).round(2)
